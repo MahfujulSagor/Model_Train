@@ -59,9 +59,9 @@ print(f"Mean Absolute Error: {mae:.2f} Taka")
 joblib.dump(model, "medicine_price_model.pkl")
 print("✅ Model saved as medicine_price_model.pkl")
 
-# ------------------------------
+#* ------------------------------
 #? Example: Predict new medicine
-# ------------------------------
+#* ------------------------------
 example = pd.DataFrame([{
     "Company": "Advanced Chemical Industries Limited",
     "Generice Name With Strength": "Paracetamol 500 mg",
@@ -70,7 +70,7 @@ example = pd.DataFrame([{
 }])
 
 predicted_log_price = model.predict(example)[0]
-predicted_price = np.expm1(predicted_log_price)  # back-transform
+predicted_price = np.expm1(predicted_log_price)  #? back-transform
 
 print("\n💊 Predicted price for example medicine:")
 print(predicted_price, "Taka")
